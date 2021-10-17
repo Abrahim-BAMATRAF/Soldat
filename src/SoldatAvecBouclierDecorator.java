@@ -1,10 +1,10 @@
 
 public class SoldatAvecBouclierDecorator extends SoldatDecorator {
-	protected int swordQuality;
+	protected int shieldQuality;
 
 	public SoldatAvecBouclierDecorator(Soldat s) {
 		super(s);
-		this.swordQuality = 20;
+		this.shieldQuality = 2;
 	}
 
 	@Override
@@ -15,19 +15,25 @@ public class SoldatAvecBouclierDecorator extends SoldatDecorator {
 	@Override
 	public boolean parer(int force) {
 		int totalForce;
-		totalForce = (this.swordQuality > 0)? force -1 : force;
-		
+		//we considered that a shield takes 1 from the force
+		if(this.shieldQuality > 0){
+			totalForce =  force -1;
+			this.shieldQuality--;
+			System.out.println("the soldier used a shield to lower the force of the attack from : " + force + " to : " + totalForce);
+		}else{
+			totalForce = force;
+			System.out.println("Shield is broken");
+		}
 		boolean res = this.decoratedSoldat.parer(totalForce);
-    	System.out.println("the soldier used a shield to lower the force of the attack from : " + force + " to : " + totalForce);
-		return res; //we considered that a shield takes 1 from the force
+		return res;
 	}
 	
 	public int getShieldQuality(){
-		return this.swordQuality;
+		return this.shieldQuality;
 	}
 	
 	public void fixShield(){
-		this.swordQuality = 20;
+		this.shieldQuality = 20;
 	}
 
 }

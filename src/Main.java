@@ -47,8 +47,8 @@ public class Main {
     	
     	//testing Proxy
     	
-    	ProxySoldat c = new ProxySoldat(new Cavalier(5));
-    	ProxySoldat f = new ProxySoldat(new Fantassin(5));
+    	ProxySoldat c = new ProxySoldat(new Cavalier(50));
+    	ProxySoldat f = new ProxySoldat(new Fantassin(50));
     	f.addShield();
     	f.addSword();
     	int ncoups = 0;
