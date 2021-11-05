@@ -66,6 +66,7 @@ public class Main {
     	
     	
     	//testing composite
+		/*
     	CompositeSoldat army1 = new CompositeSoldat();
     	army1.add(new Cavalier(5));
     	army1.add(new Cavalier(8));
@@ -81,6 +82,33 @@ public class Main {
             ;
     	
     	System.out.println("the size of the army1 : " + army1.getArmySize());
+
+		 */
+
+		//testing ArmySoldiersPrintVisitor
+		/*
+		CompositeSoldat army1 = new CompositeSoldat();
+		army1.add(new ProxySoldat(new Cavalier(50)));
+		army1.add(new Cavalier(8));
+
+		ArmySoldiersPrintVisitor printer = new ArmySoldiersPrintVisitor();
+
+		printer.visit(army1);
+
+		 */
+
+		//testing ArmySoldierCounterVisitor
+		CompositeSoldat army1 = new CompositeSoldat();
+		army1.add(new Cavalier(50));
+		army1.add(new Cavalier(8));
+
+		ArmySoldierCounterVisitor counter = new ArmySoldierCounterVisitor();
+
+		counter.visit(army1);
+
+
+
+
     	
 
     	

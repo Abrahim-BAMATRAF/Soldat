@@ -24,7 +24,7 @@ public class CompositeSoldat implements Soldat {
 		for(int i=0; i < army.size(); i++){
 			boolean currentResult = army.get(i).parer(forceSep);
 			if(!currentResult){
-				//the soldier is dead so we remove it from the army
+				//the soldier is dead, so we remove it from the army
 				army.remove(i);
 				i--;
 			}
@@ -43,6 +43,10 @@ public class CompositeSoldat implements Soldat {
 	
 	public int getArmySize(){
 		return this.army.size();
+	}
+
+	public ArrayList<Soldat> getArmy(){
+		return (ArrayList<Soldat>) this.army.clone();
 	}
 
 }
