@@ -1,6 +1,6 @@
 
 public class ProxySoldat implements Soldat {
-	private Soldat soldat;
+	public Soldat soldat;
 	private boolean hasSword;
 	private boolean hasShield;
 	
@@ -26,7 +26,7 @@ public class ProxySoldat implements Soldat {
 			this.hasSword = true;
 		}
 	}
-	
+
 	public void addShield(){
 		if(!this.hasShield){
 			this.soldat = new SoldatAvecBouclierDecorator(this.soldat);

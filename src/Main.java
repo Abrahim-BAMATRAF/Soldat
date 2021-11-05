@@ -46,7 +46,7 @@ public class Main {
         */
     	
     	//testing Proxy
-    	
+    	/*
     	ProxySoldat c = new ProxySoldat(new Cavalier(50));
     	ProxySoldat f = new ProxySoldat(new Fantassin(50));
     	f.addShield();
@@ -59,6 +59,32 @@ public class Main {
 
         System.out.println("Mort du " + (vf ? "cavalier" : "fantassin")
                 + " en " + ncoups + " coups");
+              
+        */
+                
+        
+    	
+    	
+    	//testing composite
+    	CompositeSoldat army1 = new CompositeSoldat();
+    	army1.add(new Cavalier(5));
+    	army1.add(new Cavalier(8));
+    	
+    	CompositeSoldat army2 = new CompositeSoldat();
+    	army2.add(new Fantassin(50));
+    	army2.add(new Fantassin(80));
+    	
+    	int ncoups = 0;
+        boolean varmy2 = true;
+        boolean varmy1 = true;
+    	for (; (varmy1 = army1.parer(army2.force())) && (varmy2 = army2.parer(army1.force())); ncoups++)
+            ;
+    	
+    	System.out.println("the size of the army1 : " + army1.getArmySize());
+    	
+
+    	
+    	
     	
     }
     
