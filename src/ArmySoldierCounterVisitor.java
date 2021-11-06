@@ -15,6 +15,16 @@ public class ArmySoldierCounterVisitor implements ArmyVisitor {
                 nbCavalier++;
             }else if (list.get(i) instanceof Fantassin){
                 nbFantassin++;
+            }else {
+                Cavalier s = new Cavalier(5);
+                Fantassin f = new Fantassin(5);
+                if(list.get(i).getClass().getSuperclass().isInstance(s)){
+                    nbCavalier++;
+                }
+
+                if(list.get(i).getClass().getSuperclass().isInstance(f)){
+                    nbFantassin++;
+                }
             }
         }
 

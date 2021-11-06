@@ -49,4 +49,24 @@ public class CompositeSoldat implements Soldat {
 		return (ArrayList<Soldat>) this.army.clone();
 	}
 
+	public void addSword(){
+		int nbSoldier =  army.size();
+		for (int i = 0; i < nbSoldier; i++) {
+			ProxySoldat s = new ProxySoldat(army.get(i));
+			s.addSword();
+			army.add(s);
+			army.remove(0);
+		}
+	}
+
+	public void addShield(){
+		int nbSoldier =  army.size();
+		for (int i = 0; i < nbSoldier; i++) {
+			ProxySoldat s = new ProxySoldat(army.get(i));
+			s.addShield();
+			army.add(s);
+			army.remove(0);
+		}
+	}
+
 }
